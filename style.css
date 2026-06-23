@@ -8,9 +8,9 @@
 body {
     background-color: #ebd6c5;
     color: #4a3e3d;
+    line-height: 1.6; /* ເພີ່ມໃຫ້ໄລຍະຫ່າງແຖວອ່ານງ່າຍຂຶ້ນ */
 }
 
-/* --- HEADER / NAVIGATION --- */
 header {
     background-color: #b58d6f;
     padding: 20px 0px;
@@ -18,10 +18,13 @@ header {
 
 .nav-container {
     width: 85%;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-around;
-    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .logo {
@@ -30,10 +33,17 @@ header {
     font-weight: bold;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 nav a {
     color: #f5eae0;
     text-decoration: none;
-    margin: 20px;
+    margin: 0 15px;
     font-size: 15px;
 }
 
@@ -55,7 +65,8 @@ nav a.active, nav a:hover {
 .search-box input {
     background: none;
     border: none;
-    width: 200px;
+    outline: none;
+    width: 180px;
     font-size: 15px;
     color: #4a3e3d;
 }
@@ -66,40 +77,66 @@ nav a.active, nav a:hover {
     cursor: pointer;
 }
 
-/* --- HERO SECTION --- */
+.pagination a {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+/* ==========================================================================
+   📢 HERO SECTION & CATEGORIES
+   ========================================================================== */
 .hero-section {
     text-align: center;
     padding: 40px 20px;
 }
 
 .hero-section h1 {
-    font-size: 40px;
+    font-size: clamp(28px, 5vw, 40px);
     color: #8c6239;
-    margin: 20px;
+    margin-bottom: 15px;
 }
 
 .hero-section .subtitle {
-    font-size: 20px;
+    font-size: clamp(14px, 3vw, 18px);
     color: #8c6239;
     margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* --- HERO SECTION / CATEGORIES --- */
+.hero-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* ບັງຄັບໃຫ້ປຸ່ມຢູ່ກາງສະເໝີ ໂດຍບໍ່ສົນໃຈໂຕອື່ນ */
 .categories {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.sort-by {
+    position: absolute;
+    right: 20px;
+    bottom: 2px;
+    font-size: 14px;
+    color: #7a573c;
 }
 
 .tag {
     background-color: #f3e5d8;
     color: #6d5543;
-    padding: 5px 20px;
+    padding: 6px 20px;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 14px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .tag.active, .tag:hover {
@@ -108,10 +145,9 @@ nav a.active, nav a:hover {
 }
 
 .sort-by {
-    position: absolute;
-    right: 10px;
-    font-size: 15px;
+    font-size: 14px;
     color: #7a573c;
+    margin-left: auto;
 }
 
 .flower-grid {
@@ -120,22 +156,30 @@ nav a.active, nav a:hover {
     gap: 30px;
     width: 85%;
     max-width: 1200px;
-    margin:60px auto;
+    margin: 40px auto;
+}
+
+a.card-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important; 
+    color: inherit;
 }
 
 .flower-card {
     background: ivory;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    width: 100%;           /* ບັງຄັບໃຫ້ກາດກວ້າງເຕັມຄໍລຳ */
+    height: 100%;
 }
 
 .flower-card:hover {
-    transform: translateY(-5px); /* ເຮັດໃຫ້ກາດລອຍຂຶ້ນແນວຕັ້ງ 5px */
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(114, 85, 60, 0.15);
 }
 
 .flower-card img {
@@ -154,7 +198,8 @@ nav a.active, nav a:hover {
 .card-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .card-header h3 {
@@ -165,31 +210,20 @@ nav a.active, nav a:hover {
 .card-header i {
     color: #bd7878;
     cursor: pointer;
+    font-size: 18px;
 }
 
 .card-content p {
-    font-size: 15px;
+    font-size: 14px;
     color: #7a6e67;
     margin-bottom: 20px;
+    flex-grow: 1;
 }
-
-a.card-link {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none !important; 
-}
-
-a.card-link .flower-card {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-}
-
 
 .read-more {
-    font-size: 12px;
+    font-size: 13px;
     color: #b58d6f;
-    text-decoration: none;
+    font-weight: bold;
     align-self: flex-start;
 }
 
@@ -197,18 +231,17 @@ a.card-link .flower-card {
     border-bottom: 1px solid #b58d6f;
 }
 
-/* --- PAGINATION --- */
 .pagination {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin: 40px 0;
+    margin: 50px 0;
 }
 
 .page-info {
     color: #a3704c; 
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .page-btn {
@@ -217,22 +250,24 @@ a.card-link .flower-card {
     justify-content: center;
     width: 40px;        
     height: 40px;       
-    border-radius: 50px; 
-    background-color: honeydew;
-    color: #000000; 
-    text-decoration: none; /* ຕັດເສັ້ນກ້ອງຂອງ link ອອກ */
-    transition: background-color 0.3s; 
+    border-radius: 50%; 
+    background-color: #fff;
+    color: #4a3e3d; 
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s; 
 }
 
 .page-btn:hover {
     background-color: #7a573c;
+    color: #ffffff;
 }
 
-/* --- FOOTER --- */
 footer {
     background-color: #8c6239;
     color: #ffffff;
-    padding-top: 30px;
+    padding: 40px 0 20px 0;
 }
 
 .footer-container {
@@ -241,13 +276,14 @@ footer {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 50px;
+    gap: 40px;
+    padding-bottom: 30px;
 }
 
 .footer-about p {
-    font-size: larger;
+    font-size: 16px;
     margin-bottom: 20px;
-    color: #ffffff;
+    color: #f5eae0;
 }
 
 .footer-logo {
@@ -257,22 +293,24 @@ footer {
 }
 
 .copyright {
-    font-size: 10px;
+    font-size: 11px;
     color: #d1bcac;
-    display: block;
+    margin-top: 15px;
 }
 
 .footer-links h3, .footer-contact h3 {
-    color: #d1bcac;
-    font-size: 30px;
+    color: #f5eae0;
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 
 .footer-links a {
-    display: flex;
+    display: block;
     color: #d1bcac;
     text-decoration: none;
-    font-size: 10px;
-    margin-top: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: color 0.3s;
 }
 
 .footer-links a:hover {
@@ -280,48 +318,67 @@ footer {
 }
 
 .social-item {
-    font-size: 10px;
-    margin-bottom: 15px;
+    font-size: 14px;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
     gap: 10px;
     color: #d1bcac;
-    margin-top: 10px;
 }
 
 .email-title {
-    margin-top: 10px;
+    margin-top: 20px !important;
 }
 
-/* --- RESPONSIVE DESIGN (ສຳລັບມືຖື) --- */
-@media (max-width: 900px) {
-    .flower-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+/* 📑 ສຳລັບ ໜ້າຈໍ iPad / Tablet ແລະ ມືຖືແນວນອນ (ກວ້າງຕ່ຳກວ່າ 992px) */
+@media (max-width: 992px) {
+    .nav-container {
+        justify-content: center; /* ຈັດໃຫ້ໂລໂກ້ ແລະ ເມນູຢູ່ເຄິ່ງກາງ */
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        margin: 10px 0;
     }
     .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .categories {
-        flex-wrap: wrap;
-        padding-bottom: 30px;
+        grid-template-columns: 1fr 1fr; /* ປ່ຽນຟຸດເຕີເປັນ 2 ຄໍລຳ */
     }
     .sort-by {
-        position: relative;
-        right: 0;
+        position: static; /* ຍົກເລີກ absolute ເພື່ອບໍ່ໃຫ້ຕຳກັບປຸ່ມອື່ນ */
         width: 100%;
         text-align: center;
         margin-top: 10px;
     }
 }
 
+/* 📱 ສຳລັບ ໜ້າຈໍ ມືຖືທົ່ວໄປ (ກວ້າງຕ່ຳກວ່າ 600px) */
 @media (max-width: 600px) {
     .nav-container {
-        flex-direction: column;
-        gap: 15px;
+        width: 90%;
+    }
+    nav a {
+        margin: 5px 10px; /* ບີບເມນູໃຫ້ແຄບເຂົ້າກັນໃນມືຖື */
+        font-size: 14px;
+    }
+    .search-box {
+        width: 100%; /* ໃຫ້ຊ່ອງຄົ້ນຫາກວ້າງເຕັມຈໍມືຖື */
+        justify-content: space-between;
+    }
+    .search-box input {
+        width: 100%;
     }
     .flower-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 🌟 ບັງຄັບໃຫ້ກາດລຽງແຖວຕັ້ງດ່ຽວ ເຮັດໃຫ້ເບິ່ງງາມ ບໍ່ບີບກັນ */
+        width: 90%;
+        gap: 20px;
+    }
+    .footer-container {
+        grid-template-columns: 1fr; /* 🌟 ຟຸດເຕີລຽງແຖວຕັ້ງດ່ຽວທັງໝົດ */
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-links a, .social-item {
+        justify-content: center; /* ຈັດຂໍ້ຄວາມຟຸດເຕີໃຫ້ຢູ່ກາງຈໍມືຖື */
     }
 }
-
