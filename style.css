@@ -8,7 +8,6 @@
 body {
     background-color: #ebd6c5;
     color: #4a3e3d;
-    line-height: 1.6; /* ເພີ່ມໃຫ້ໄລຍະຫ່າງແຖວອ່ານງ່າຍຂຶ້ນ */
 }
 
 header {
@@ -82,9 +81,6 @@ nav a.active, nav a:hover {
     color: inherit;
 }
 
-/* ==========================================================================
-   📢 HERO SECTION & CATEGORIES
-   ========================================================================== */
 .hero-section {
     text-align: center;
     padding: 40px 20px;
@@ -105,13 +101,11 @@ nav a.active, nav a:hover {
     margin-right: auto;
 }
 
-/* --- HERO SECTION / CATEGORIES --- */
 .hero-section {
     text-align: center;
     padding: 40px 20px;
 }
 
-/* ບັງຄັບໃຫ້ປຸ່ມຢູ່ກາງສະເໝີ ໂດຍບໍ່ສົນໃຈໂຕອື່ນ */
 .categories {
     display: flex;
     justify-content: center;
@@ -334,7 +328,7 @@ footer {
 /* 📑 ສຳລັບ ໜ້າຈໍ iPad / Tablet ແລະ ມືຖືແນວນອນ (ກວ້າງຕ່ຳກວ່າ 992px) */
 @media (max-width: 992px) {
     .nav-container {
-        justify-content: center; /* ຈັດໃຫ້ໂລໂກ້ ແລະ ເມນູຢູ່ເຄິ່ງກາງ */
+        justify-content: center;
         flex-direction: column;
         text-align: center;
     }
@@ -342,10 +336,10 @@ footer {
         margin: 10px 0;
     }
     .footer-container {
-        grid-template-columns: 1fr 1fr; /* ປ່ຽນຟຸດເຕີເປັນ 2 ຄໍລຳ */
+        grid-template-columns: 1fr 1fr;
     }
     .sort-by {
-        position: static; /* ຍົກເລີກ absolute ເພື່ອບໍ່ໃຫ້ຕຳກັບປຸ່ມອື່ນ */
+        position: static;
         width: 100%;
         text-align: center;
         margin-top: 10px;
@@ -358,27 +352,27 @@ footer {
         width: 90%;
     }
     nav a {
-        margin: 5px 10px; /* ບີບເມນູໃຫ້ແຄບເຂົ້າກັນໃນມືຖື */
+        margin: 5px 10px;
         font-size: 14px;
     }
     .search-box {
-        width: 100%; /* ໃຫ້ຊ່ອງຄົ້ນຫາກວ້າງເຕັມຈໍມືຖື */
+        width: 100%;
         justify-content: space-between;
     }
     .search-box input {
         width: 100%;
     }
     .flower-grid {
-        grid-template-columns: 1fr; /* 🌟 ບັງຄັບໃຫ້ກາດລຽງແຖວຕັ້ງດ່ຽວ ເຮັດໃຫ້ເບິ່ງງາມ ບໍ່ບີບກັນ */
+        grid-template-columns: 1fr;
         width: 90%;
         gap: 20px;
     }
     .footer-container {
-        grid-template-columns: 1fr; /* 🌟 ຟຸດເຕີລຽງແຖວຕັ້ງດ່ຽວທັງໝົດ */
+        grid-template-columns: 1fr;
         text-align: center;
         gap: 30px;
     }
     .footer-links a, .social-item {
-        justify-content: center; /* ຈັດຂໍ້ຄວາມຟຸດເຕີໃຫ້ຢູ່ກາງຈໍມືຖື */
+        justify-content: center;
     }
 }
