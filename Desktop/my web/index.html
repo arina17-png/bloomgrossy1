@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page 1</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">BloomGlossary</div>
+            <nav>
+                <a href="#" class="active">STORIES</a>
+                <a href="#">ABOUT</a>
+                <a href="#">GALLERY</a>
+            </nav>
+            <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search">
+                    
+                    <button class="search-click-btn" onclick="performSearch()" style="background: none; border: none; padding: 0;">
+                        <i class="fas fa-search" id="search-btn" style="cursor: pointer;"></i>
+                    </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h1>The Flower Chapter</h1>
+            <p class="subtitle">ສຳຫລວດຄວາມງາມ ແລະ ເລື່ອງລາວທີ່ຢູ່ພາຍໃນກີບດອກໄມ້ຈາກທົ່ວທຸກມຸມໂລກ <br> ຮ່ວມຄົ້ນຫາຄວາມຫມາຍທີ່ລຶກຊຶ້ງຜ່ານສິລະປະແຫ່ງທຳມະຊາດ</p>       
+            <div class="categories-container" style="position: relative; max-width: 1200px; margin: 0 auto;">
+                <div class="categories">
+                    <span class="tag active">ທັງໝົດ</span>
+                    <span class="tag">ໂຣແມນຕິກ</span>
+                    <span class="tag">ເທດສະການ</span>
+                    <span class="tag">ສີສັນ</span>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="flower-grid">
+            
+            <a href="./rose.html" class="card-link">
+                <div class="flower-card">
+                    <img src="./pic/rose.jpg" alt="Rose">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>ROSE</h3>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <p>ຄວາມໝາຍໂດຍຫຍໍ້:<br>"ຄວາມຮັກທີ່ເລິກເຊິ່ງ, ຄວາມປາຖະໜາ ແລະ ຄວາມໂຣແມນຕິກ"</p>
+                        <span class="read-more">ອ່ານຕໍ່ ></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./tulip.html" class="card-link">
+                <div class="flower-card">
+                    <img src="./pic/tulip.jpg" alt="Tulip">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>TULIP</h3>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <p>ຄວາມໝາຍໂດຍຫຍໍ້:<br>"ການຕົກຫຼຸມຮັກຢ່າງໝົດໃຈ ແລະ ຄວາມຊື່ສັດ"</p>
+                        <span class="read-more">ອ່ານຕໍ່ ></span>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="./sunflower.html" class="card-link">
+                <div class="flower-card">
+                    <img src="./pic/sunflower.jpg" alt="Sunflower">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>SUNFLOWER</h3>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <p>ຄວາມໝາຍໂດຍຫຍໍ້:<br>"ຄວາມຮັກທີ່ໝັ້ນຄົງ, ຄວາມເຊື່ອໝັ້ນ ແລະ ຄວາມສົດໃສ"</p>
+                        <span class="read-more">ອ່ານຕໍ່ ></span>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="./forgetmenot.html" class="card-link">
+                <div class="flower-card">
+                    <img src="./pic/forgetmenot.avif" alt="Forget Me Not">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>FORGET ME NOT</h3>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <p>ຄວາມໝາຍໂດຍຫຍໍ້:<br>"ຄວາມຮັກແທ້ ແລະ ຄວາມຊົງຈຳທີ່ຈະບໍ່ມີວັນລືມ"</p>
+                        <span class="read-more">ອ່ານຕໍ່ ></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./lavender.html" class="card-link">
+                <div class="flower-card">
+                    <img src="./pic/lavender.jpg" alt="Lavender">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>LAVENDER</h3>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <p>ຄວາມໝາຍໂດຍຫຍໍ້:<br>"ຄວາມສະຫງົບ, ຄວາມບໍລິສຸດ ແລະ ການລໍຖ້າຢ່າງມີຄວາມຫວັງ"</p>
+                        <span class="read-more">ອ່ານຕໍ່ ></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./hydrangea.html" class="card-link">
+                <div class="flower-card">
+                    <img src="./pic/hydrangea.jpg" alt="Hydrangea">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>HYDRANGEA</h3>
+                            <i class="far fa-heart"></i>
+                        </div>
+                        <p>ຄວາມໝາຍໂດຍຫຍໍ້:<br>"ຄຳຂອບໃຈ, ຄວາມເອົາໃຈໃສ່ ຫຼື ການຂໍໂທດ"</p>
+                        <span class="read-more">ອ່ານຕໍ່ ></span>
+                    </div>
+                </div>
+            </a>
+
+        </section>
+
+        <div class="pagination">
+            <a href="./index.html" class="page-btn">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+
+            <span class="page-info">ໜ້າ 1 ຈາກ 7</span>
+
+            <a href="./index2.html" class="page-btn">
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <p>ເວັບໄຊ້ຮວບຮວມຄວາມຫມາຍ ແລະ <br>ເລື່ອງເລົ່າຂອງດອກໄມ້ເພື່ອສົ່ງຕໍ່ຄວາມຮູ້ສຶກດີໆ</p>
+                <br>
+                <br>
+                <h2 class="footer-logo">BloomGlossary</h2>
+                <span class="copyright">© 2026 M&N Flowers Brand Website All Rights Reserved.</span>
+            </div>
+            
+            <div class="footer-links">
+                <h3>LINK</h3>
+                <a href="#">STORIES</a>
+                <a href="#">ABOUT</a>
+                <a href="#">GALLERY</a>
+            </div>
+
+            <div class="footer-contact">
+                <h3>ຕິດຕາມພວກເຮົາ :</h3>
+                <div class="social-item"><i class="fab fa-instagram"></i> BloomGlossary</div>
+                <div class="social-item"><i class="fab fa-tiktok"></i> BloomGlossary</div>
+                <div class="social-item"><i class="fab fa-facebook-f"></i> BloomGlossary</div>
+                
+                <h3 class="email-title">ຕິດຕໍ່ພວກເຮົາ :</h3>
+                <div class="social-item"><i class="far fa-envelope"></i> BloomGlossary_1@gmail.com</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./flower.js">    </script>
+        
+</body>
+</html>
